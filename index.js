@@ -16,11 +16,13 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: white;
-            min-height: 100vh;
+        }
+
+        #carousel-root {
             display: flex;
             justify-content: center;
-            align-items: center;
             padding: 20px;
+            margin: 0 auto;
         }
 
         .carousel-container {
