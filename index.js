@@ -581,35 +581,60 @@
             }
             
             .carousel-container {
-                width: 100%;
-                max-width: 360px; /* Max phone width */
-                height: 640px; /* Slightly taller for mobile */
+                width: 300px; /* Fixed width for mobile */
+                max-width: 300px;
+                height: 600px;
                 margin: 0 auto;
             }
             
             .slide {
-                padding: 25px 20px;
+                padding: 20px 15px;
             }
             
             .slide-1 h1 {
-                font-size: 22px;
-                margin-top: 70px;
+                font-size: 20px;
+                margin-top: 65px;
             }
             
             .slide-1 .logo {
                 left: 50%;
                 transform: translateX(-50%);
+                width: 70px;
+            }
+            
+            .transparency-badge {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .transparency-badge h2 {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            
+            .impact-stats div {
+                font-size: 11px;
+                margin-bottom: 5px;
+            }
+            
+            .pie-chart {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .pie-chart::before {
+                font-size: 26px;
             }
             
             .nav-arrows {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
             }
             
             .nav-dot {
-                width: 8px;
-                height: 8px;
+                width: 6px;
+                height: 6px;
             }
         }
 
@@ -620,27 +645,56 @@
             }
             
             .carousel-container {
-                max-width: 100%;
-                height: 100vh;
-                max-height: 700px;
+                width: 300px; /* Still 300px for very small screens */
+                max-width: 300px;
+                height: 580px;
                 border-radius: 15px;
             }
             
             .slide {
-                padding: 20px 15px;
+                padding: 18px 12px;
             }
             
             .slide-1 h1 {
-                font-size: 20px;
-                margin-top: 60px;
+                font-size: 18px;
+                margin-top: 55px;
+            }
+            
+            .transparency-badge {
+                padding: 12px;
+                margin-bottom: 15px;
             }
             
             .transparency-badge h2 {
-                font-size: 14px;
+                font-size: 13px;
+                margin-bottom: 8px;
             }
             
             .impact-stats div {
+                font-size: 10px;
+                margin-bottom: 4px;
+            }
+            
+            .pie-chart {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .pie-chart::before {
+                font-size: 22px;
+            }
+            
+            .breakdown-section {
+                padding: 10px;
+                margin-bottom: 12px;
+            }
+            
+            .breakdown-section h3 {
                 font-size: 12px;
+            }
+            
+            .breakdown-section p {
+                font-size: 10px;
             }
         }
 
