@@ -24,8 +24,9 @@
         }
 
         .carousel-container {
-            width: 375px;
-            height: 667px;
+            /* Desktop dimensions - smaller */
+            width: 320px;
+            height: 580px;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -46,7 +47,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            padding: 40px 30px;
+            padding: 30px 25px;
             background-size: cover;
             background-position: center;
         }
@@ -59,72 +60,73 @@
 
         .slide-1 .logo {
             position: absolute;
-            top: 20px;
-            left: 130px;
-            width: 100px;
+            top: 15px;
+            left: 110px;
+            width: 80px;
             height: auto;
         }
 
         .slide-1 h1 {
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .slide-1 .subtitle {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .transparency-badge {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 25px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .transparency-badge h2 {
             color: white;
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .impact-stats {
             color: white;
-            line-height: 1.8;
+            line-height: 1.6;
         }
 
         .impact-stats div {
-            margin-bottom: 8px;
-            font-size: 14px;
+            margin-bottom: 6px;
+            font-size: 13px;
         }
 
         .highlight {
             background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 8px;
             text-align: center;
             color: white;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 15px;
+            font-size: 14px;
         }
 
         .swipe-indicator {
             position: absolute;
-            bottom: 20px;
-            right: 30px;
+            bottom: 15px;
+            right: 25px;
             color: white;
-            font-size: 12px;
+            font-size: 11px;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -140,11 +142,11 @@
         }
 
         .pie-chart {
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             background: conic-gradient(#4CAF50 0deg 298.8deg, #81C784 298.8deg 360deg);
-            margin: 20px auto;
+            margin: 15px auto;
             position: relative;
             display: flex;
             align-items: center;
@@ -154,7 +156,7 @@
 
         .pie-chart::before {
             content: "83%";
-            font-size: 36px;
+            font-size: 30px;
             font-weight: bold;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -162,36 +164,36 @@
 
         .slide-2 h1 {
             color: white;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 800;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .breakdown {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 15px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .breakdown-item {
             color: white;
-            margin-bottom: 15px;
-            font-size: 14px;
+            margin-bottom: 12px;
+            font-size: 12px;
             text-align: left;
         }
 
         .breakdown-item strong {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .hashtag {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            margin-top: 20px;
+            font-size: 12px;
+            margin-top: 15px;
             font-style: italic;
         }
 
@@ -203,47 +205,47 @@
 
         .slide-3 h1 {
             color: white;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .euro-breakdown {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 18px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .breakdown-section {
-            margin-bottom: 20px;
-            padding: 15px;
+            margin-bottom: 15px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 8px;
             border-left: 4px solid #FFD700;
         }
 
         .breakdown-section h3 {
             color: white;
-            font-size: 16px;
-            margin-bottom: 5px;
+            font-size: 14px;
+            margin-bottom: 4px;
         }
 
         .breakdown-section p {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 12px;
-            line-height: 1.4;
+            font-size: 11px;
+            line-height: 1.3;
         }
 
         .real-impact {
             text-align: center;
             color: white;
             font-weight: bold;
-            margin-top: 20px;
-            font-size: 14px;
+            margin-top: 15px;
+            font-size: 12px;
         }
 
         /* Slide 4 - Scale Vision */
@@ -254,65 +256,65 @@
 
         .slide-4 h1 {
             color: white;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .scale-comparison {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 15px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .scale-item {
             color: white;
-            margin-bottom: 10px;
-            font-size: 14px;
+            margin-bottom: 8px;
+            font-size: 13px;
         }
 
         .scale-result {
             text-align: center;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         .tracking-features {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 18px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .tracking-features h2 {
             color: white;
-            font-size: 16px;
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 12px;
         }
 
         .feature-item {
             color: white;
-            margin-bottom: 8px;
-            font-size: 12px;
+            margin-bottom: 6px;
+            font-size: 11px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .trust-message {
             text-align: center;
             color: white;
             font-weight: bold;
-            margin-top: 20px;
-            font-size: 14px;
+            margin-top: 15px;
+            font-size: 12px;
         }
 
         /* Slide 5 - Call to Action */
@@ -323,49 +325,49 @@
 
         .slide-5 h1 {
             color: white;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .trust-signals {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 18px;
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .trust-item {
             color: white;
-            margin-bottom: 10px;
-            font-size: 14px;
+            margin-bottom: 8px;
+            font-size: 12px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .member-count {
             text-align: center;
             color: white;
-            font-size: 16px;
-            margin: 20px 0;
-            line-height: 1.5;
+            font-size: 14px;
+            margin: 15px 0;
+            line-height: 1.4;
         }
 
         .cta-button {
             background: rgba(255, 255, 255, 0.2);
             border: 2px solid white;
             color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-size: 16px;
+            padding: 12px 25px;
+            border-radius: 20px;
+            font-size: 14px;
             font-weight: bold;
             text-align: center;
-            margin: 20px 0;
+            margin: 15px 0;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -378,25 +380,25 @@
         .website-link {
             text-align: center;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         /* Navigation */
         .nav-dots {
             position: absolute;
-            bottom: 20px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 10px;
+            gap: 8px;
             z-index: 100;
         }
 
         .nav-dot {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
@@ -415,9 +417,9 @@
             background: rgba(255, 255, 255, 0.2);
             border: none;
             color: white;
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
+            font-size: 18px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -429,11 +431,11 @@
         }
 
         .prev-arrow {
-            left: 10px;
+            left: 8px;
         }
 
         .next-arrow {
-            right: 10px;
+            right: 8px;
         }
 
         /* Animations */
@@ -572,12 +574,81 @@
             animation: rotateIn 1s ease-out 0.3s both, fillPie 2s ease-out 1s both;
         }
 
-        /* Responsive */
-        @media (max-width: 480px) {
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
             .carousel-container {
                 width: 100%;
+                max-width: 360px; /* Max phone width */
+                height: 640px; /* Slightly taller for mobile */
+                margin: 0 auto;
+            }
+            
+            .slide {
+                padding: 25px 20px;
+            }
+            
+            .slide-1 h1 {
+                font-size: 22px;
+                margin-top: 70px;
+            }
+            
+            .slide-1 .logo {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .nav-arrows {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            .nav-dot {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        /* Very small mobile devices */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .carousel-container {
+                max-width: 100%;
                 height: 100vh;
-                border-radius: 0;
+                max-height: 700px;
+                border-radius: 15px;
+            }
+            
+            .slide {
+                padding: 20px 15px;
+            }
+            
+            .slide-1 h1 {
+                font-size: 20px;
+                margin-top: 60px;
+            }
+            
+            .transparency-badge h2 {
+                font-size: 14px;
+            }
+            
+            .impact-stats div {
+                font-size: 12px;
+            }
+        }
+
+        /* Large desktop screens */
+        @media (min-width: 1200px) {
+            .carousel-container {
+                width: 350px; /* Slightly larger on big screens */
+                height: 620px;
             }
         }
     `;
@@ -616,7 +687,7 @@
                 <div class="slide slide-2">
                     <h1>🎯 THE 83% PROMISE</h1>
                     
-                    <p style="color: white; margin-bottom: 20px; font-size: 16px;">Every €1.20 you contribute:</p>
+                    <p style="color: white; margin-bottom: 20px; font-size: 14px;">Every €1.20 you contribute:</p>
                     
                     <div class="pie-chart"></div>
                     
