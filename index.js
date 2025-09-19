@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uon.Earth Financial Transparency Carousel</title>
-    <style>
+(function() {
+    // Create container for the carousel
+    const container = document.createElement('div');
+    container.id = 'carousel-root';
+    document.body.appendChild(container);
+
+    // Inject CSS
+    const style = document.createElement('style');
+    style.textContent = `
         * {
             margin: 0;
             padding: 0;
@@ -578,244 +580,240 @@
                 border-radius: 0;
             }
         }
-    </style>
-</head>
-<body>
-    <div class="carousel-container">
-        <div class="carousel-wrapper" id="carouselWrapper">
-            <!-- Slide 1: Cover -->
-            <div class="slide slide-1">
-                <img class="logo" src="https://assets.uon.earth/page/S4E/assets/img/profile-sail4earth.png" alt="Uon.Earth Logo">
-                <h1 style="margin-top:80px;">100% FINANCIAL TRANSPARENCY</h1>
-                <p class="subtitle">See exactly where your money goes</p>
-                
-                <div class="transparency-badge">
-                    <h2>💚 TRANSPARENCY BY DESIGN</h2>
-                    <div class="impact-stats">
-                        <div>👥 <strong>2,847</strong> Active Members</div>
-                        <div>💰 <strong>€34,164</strong> Pilot Revenue This Quarter</div>
-                        <div>🌱 <strong>28,470</strong> UONs Issued</div>
-                        <div>🎯 <strong>83%</strong> Direct to Conservation</div>
-                    </div>
-                </div>
-                
-                <div class="highlight">
-                    Swipe to see the full breakdown →
-                </div>
-                
-                <div class="swipe-indicator">
-                    Swipe → 
-                </div>
-            </div>
+    `;
+    document.head.appendChild(style);
 
-            <!-- Slide 2: 83% Promise -->
-            <div class="slide slide-2">
-                <h1>🎯 THE 83% PROMISE</h1>
-                
-                <p style="color: white; margin-bottom: 20px; font-size: 16px;">Every €1.20 you contribute:</p>
-                
-                <div class="pie-chart"></div>
-                
-                <div class="breakdown">
-                    <div class="breakdown-item">
-                        <strong>83% → CONSERVATION 🌳</strong><br>
-                        Directly funds nature protection
-                    </div>
-                    <div class="breakdown-item">
-                        <strong>17% → OPERATIONS + TAXES 💼</strong><br>
-                        Keeps the platform running
-                    </div>
-                    <div class="breakdown-item">
-                        <strong>0% → PROFITS ❌</strong><br>
-                        Zero dividends, ever.
-                    </div>
-                </div>
-                
-                <div class="hashtag">#TransparencyMatters</div>
-            </div>
-
-            <!-- Slide 3: Detailed Breakdown -->
-            <div class="slide slide-3">
-                <h1>💰 WHERE EVERY €1.20 GOES</h1>
-                
-                <div class="euro-breakdown">
-                    <div class="breakdown-section">
-                        <h3>90¢ → Established Conservation NGOs (75%)</h3>
-                        <p>Major nature protection organizations</p>
+    // Inject HTML
+    container.innerHTML = `
+        <div class="carousel-container">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                <!-- Slide 1: Cover -->
+                <div class="slide slide-1">
+                    <img class="logo" src="https://assets.uon.earth/page/S4E/assets/img/profile-sail4earth.png" alt="Uon.Earth Logo">
+                    <h1 style="margin-top:80px;">100% FINANCIAL TRANSPARENCY</h1>
+                    <p class="subtitle">See exactly where your money goes</p>
+                    
+                    <div class="transparency-badge">
+                        <h2>💚 TRANSPARENCY BY DESIGN</h2>
+                        <div class="impact-stats">
+                            <div>👥 <strong>2,847</strong> Active Members</div>
+                            <div>💰 <strong>€34,164</strong> Pilot Revenue This Quarter</div>
+                            <div>🌱 <strong>28,470</strong> UONs Issued</div>
+                            <div>🎯 <strong>83%</strong> Direct to Conservation</div>
+                        </div>
                     </div>
                     
-                    <div class="breakdown-section">
-                        <h3>10¢ → Grassroots Conservation (8.3%)</h3>
-                        <p>Local groundwork & field projects</p>
+                    <div class="highlight">
+                        Swipe to see the full breakdown →
                     </div>
                     
-                    <div class="breakdown-section">
-                        <h3>3¢ → Governance & Oversight (2.5%)</h3>
-                        <p>Ensuring transparency & accountability</p>
+                    <div class="swipe-indicator">
+                        Swipe → 
+                    </div>
+                </div>
+
+                <!-- Slide 2: 83% Promise -->
+                <div class="slide slide-2">
+                    <h1>🎯 THE 83% PROMISE</h1>
+                    
+                    <p style="color: white; margin-bottom: 20px; font-size: 16px;">Every €1.20 you contribute:</p>
+                    
+                    <div class="pie-chart"></div>
+                    
+                    <div class="breakdown">
+                        <div class="breakdown-item">
+                            <strong>83% → CONSERVATION 🌳</strong><br>
+                            Directly funds nature protection
+                        </div>
+                        <div class="breakdown-item">
+                            <strong>17% → OPERATIONS + TAXES 💼</strong><br>
+                            Keeps the platform running
+                        </div>
+                        <div class="breakdown-item">
+                            <strong>0% → PROFITS ❌</strong><br>
+                            Zero dividends, ever.
+                        </div>
                     </div>
                     
-                    <div class="breakdown-section">
-                        <h3>17¢ → Platform Operations (14.2%)</h3>
-                        <p>Tech infrastructure & zero dividends</p>
+                    <div class="hashtag">#TransparencyMatters</div>
+                </div>
+
+                <!-- Slide 3: Detailed Breakdown -->
+                <div class="slide slide-3">
+                    <h1>💰 WHERE EVERY €1.20 GOES</h1>
+                    
+                    <div class="euro-breakdown">
+                        <div class="breakdown-section">
+                            <h3>90¢ → Established Conservation NGOs (75%)</h3>
+                            <p>Major nature protection organizations</p>
+                        </div>
+                        
+                        <div class="breakdown-section">
+                            <h3>10¢ → Grassroots Conservation (8.3%)</h3>
+                            <p>Local groundwork & field projects</p>
+                        </div>
+                        
+                        <div class="breakdown-section">
+                            <h3>3¢ → Governance & Oversight (2.5%)</h3>
+                            <p>Ensuring transparency & accountability</p>
+                        </div>
+                        
+                        <div class="breakdown-section">
+                            <h3>17¢ → Platform Operations (14.2%)</h3>
+                            <p>Tech infrastructure & zero dividends</p>
+                        </div>
+                    </div>
+                    
+                    <div class="real-impact">Real impact, real numbers 📊</div>
+                </div>
+
+                <!-- Slide 4: Scale Vision -->
+                <div class="slide slide-4">
+                    <h1>🚀 IMAGINE AT SCALE</h1>
+                    
+                    <div class="scale-comparison">
+                        <div class="scale-item"><strong>Current:</strong> 2,847 Members</div>
+                        <div class="scale-item"><strong>Vision:</strong> 100 Million Members</div>
+                    </div>
+                    
+                    <div class="scale-result">= Billions for Conservation 🌍</div>
+                    
+                    <div class="tracking-features">
+                        <h2>📊 TRACK IT LIVE:</h2>
+                        <div class="feature-item">✅ Real-time impact counter</div>
+                        <div class="feature-item">✅ Live member count</div>
+                        <div class="feature-item">✅ UONs issued tracker</div>
+                        <div class="feature-item">✅ Quarterly reports</div>
+                    </div>
+                    
+                    <div class="trust-message">
+                        No trust required - <br>
+                        just transparent data 📈
                     </div>
                 </div>
-                
-                <div class="real-impact">Real impact, real numbers 📊</div>
-            </div>
 
-            <!-- Slide 4: Scale Vision -->
-            <div class="slide slide-4">
-                <h1>🚀 IMAGINE AT SCALE</h1>
-                
-                <div class="scale-comparison">
-                    <div class="scale-item"><strong>Current:</strong> 2,847 Members</div>
-                    <div class="scale-item"><strong>Vision:</strong> 100 Million Members</div>
-                </div>
-                
-                <div class="scale-result">= Billions for Conservation 🌍</div>
-                
-                <div class="tracking-features">
-                    <h2>📊 TRACK IT LIVE:</h2>
-                    <div class="feature-item">✅ Real-time impact counter</div>
-                    <div class="feature-item">✅ Live member count</div>
-                    <div class="feature-item">✅ UONs issued tracker</div>
-                    <div class="feature-item">✅ Quarterly reports</div>
-                </div>
-                
-                <div class="trust-message">
-                    No trust required - <br>
-                    just transparent data 📈
+                <!-- Slide 5: Call to Action -->
+                <div class="slide slide-5">
+                    <h1>🌱 READY TO MAKE IMPACT?</h1>
+                    
+                    <div class="trust-signals">
+                        <div class="trust-item">✓ IUCN Member Organization</div>
+                        <div class="trust-item">✓ Quarterly Financial Reports</div>
+                        <div class="trust-item">✓ Live Impact Tracking</div>
+                        <div class="trust-item">✓ Zero Hidden Fees</div>
+                        <div class="trust-item">✓ Capped Returns Policy</div>
+                    </div>
+                    
+                    <div class="member-count">
+                        Join <strong>2,847</strong> members creating<br>
+                        real change with full transparency
+                    </div>
+                    
+                    <div class="cta-button">👆 Link in bio</div>
+                    
+                    <div class="website-link">Visit: Uon.Earth</div>
                 </div>
             </div>
 
-            <!-- Slide 5: Call to Action -->
-            <div class="slide slide-5">
-                <h1>🌱 READY TO MAKE IMPACT?</h1>
-                
-                <div class="trust-signals">
-                    <div class="trust-item">✓ IUCN Member Organization</div>
-                    <div class="trust-item">✓ Quarterly Financial Reports</div>
-                    <div class="trust-item">✓ Live Impact Tracking</div>
-                    <div class="trust-item">✓ Zero Hidden Fees</div>
-                    <div class="trust-item">✓ Capped Returns Policy</div>
-                </div>
-                
-                <div class="member-count">
-                    Join <strong>2,847</strong> members creating<br>
-                    real change with full transparency
-                </div>
-                
-                <div class="cta-button">👆 Link in bio</div>
-                
-                <div class="website-link">Visit: Uon.Earth</div>
+            <!-- Navigation -->
+            <button class="nav-arrows prev-arrow" onclick="previousSlide()">‹</button>
+            <button class="nav-arrows next-arrow" onclick="nextSlide()">›</button>
+            
+            <div class="nav-dots">
+                <div class="nav-dot active" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" onclick="goToSlide(4)"></div>
             </div>
         </div>
+    `;
 
-        <!-- Navigation -->
-        <button class="nav-arrows prev-arrow" onclick="previousSlide()">‹</button>
-        <button class="nav-arrows next-arrow" onclick="nextSlide()">›</button>
+    // JavaScript for carousel functionality
+    let currentSlide = 0;
+    const totalSlides = 5;
+    const carouselWrapper = container.querySelector('#carouselWrapper');
+    const navDots = container.querySelectorAll('.nav-dot');
+
+    window.nextSlide = function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    };
+
+    window.previousSlide = function() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    };
+
+    window.goToSlide = function(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+    };
+
+    function updateCarousel() {
+        const translateX = -currentSlide * 20; // 20% per slide
+        carouselWrapper.style.transform = `translateX(${translateX}%)`;
         
-        <div class="nav-dots">
-            <div class="nav-dot active" onclick="goToSlide(0)"></div>
-            <div class="nav-dot" onclick="goToSlide(1)"></div>
-            <div class="nav-dot" onclick="goToSlide(2)"></div>
-            <div class="nav-dot" onclick="goToSlide(3)"></div>
-            <div class="nav-dot" onclick="goToSlide(4)"></div>
-        </div>
-    </div>
-
-    <script>
-        let currentSlide = 0;
-        const totalSlides = 5;
-        const carouselWrapper = document.getElementById('carouselWrapper');
-        const navDots = document.querySelectorAll('.nav-dot');
-
-        function updateCarousel() {
-            const translateX = -currentSlide * 20; // 20% per slide
-            carouselWrapper.style.transform = `translateX(${translateX}%)`;
-            
-            // Update nav dots
-            navDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-
-            // Update active slide for animations
-            const slides = document.querySelectorAll('.slide');
-            slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === currentSlide);
-            });
-
-            // Add animation delays for list items
-            const currentSlideElement = slides[currentSlide];
-            const featureItems = currentSlideElement.querySelectorAll('.feature-item');
-            const trustItems = currentSlideElement.querySelectorAll('.trust-item');
-            
-            featureItems.forEach((item, index) => {
-                item.style.setProperty('--delay', index);
-            });
-            
-            trustItems.forEach((item, index) => {
-                item.style.setProperty('--delay', index);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }
-
-        function previousSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateCarousel();
-        }
-
-        // Touch/swipe support
-        let startX = 0;
-        let endX = 0;
-
-        carouselWrapper.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
+        // Update nav dots
+        navDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
         });
 
-        carouselWrapper.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
+        // Update active slide for animations
+        const slides = container.querySelectorAll('.slide');
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
         });
 
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = startX - endX;
+        // Add animation delays for list items
+        const currentSlideElement = slides[currentSlide];
+        const featureItems = currentSlideElement.querySelectorAll('.feature-item');
+        const trustItems = currentSlideElement.querySelectorAll('.trust-item');
+        
+        featureItems.forEach((item, index) => {
+            item.style.setProperty('--delay', index);
+        });
+        
+        trustItems.forEach((item, index) => {
+            item.style.setProperty('--delay', index);
+        });
+    }
 
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    nextSlide();
-                } else {
-                    previousSlide();
-                }
-            }
-        }
+    // Touch/swipe support
+    let startX = 0;
+    let endX = 0;
 
-        // Auto-advance (optional)
-        // setInterval(nextSlide, 5000);
+    carouselWrapper.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                previousSlide();
-            } else if (e.key === 'ArrowRight') {
+    carouselWrapper.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
                 nextSlide();
+            } else {
+                previousSlide();
             }
-        });
+        }
+    }
 
-        // Initialize carousel
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCarousel();
-        });
-    </script>
-</body>
-</html>
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            previousSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+
+    // Initialize carousel
+    updateCarousel();
+})();
