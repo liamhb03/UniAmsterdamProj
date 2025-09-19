@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uon.Earth Financial Transparency Carousel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .carousel-container {
+            width: 375px;
+            height: 667px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-wrapper {
+            width: 500%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .slide {
+            width: 20%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 30px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Slide 1 - Cover */
+        .slide-1 {
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.7), rgba(0, 100, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=375&q=80');
+        }
+
+        .slide-1 .logo {
+            position: absolute;
+            top: 20px;
+            left: 130px;
+            width: 100px;
+            height: auto;
+        }
+
+        .slide-1 h1 {
+            color: white;
+            font-size: 28px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-1 .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .transparency-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .transparency-badge h2 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .impact-stats {
+            color: white;
+            line-height: 1.8;
+        }
+
+        .impact-stats div {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .swipe-indicator {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            color: white;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Slide 2 - 83% Promise */
+        .slide-2 {
+            background: linear-gradient(135deg, rgba(0, 150, 136, 0.7), rgba(76, 175, 80, 0.7)),
+                        url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=375&q=80');
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(#4CAF50 0deg 298.8deg, #81C784 298.8deg 360deg);
+            margin: 20px auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .pie-chart::before {
+            content: "83%";
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-2 h1 {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .breakdown {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .breakdown-item {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .breakdown-item strong {
+            font-size: 16px;
+        }
+
+        .hashtag {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Slide 3 - Money Breakdown */
+        .slide-3 {
+            background: linear-gradient(135deg, rgba(63, 81, 181, 0.7), rgba(103, 58, 183, 0.7)),
+                        url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=375&q=80');
+        }
+
+        .slide-3 h1 {
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .euro-breakdown {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .breakdown-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #FFD700;
+        }
+
+        .breakdown-section h3 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .breakdown-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .real-impact {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Slide 4 - Scale Vision */
+        .slide-4 {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.7), rgba(156, 39, 176, 0.7)),
+                        url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=375&q=80');
+        }
+
+        .slide-4 h1 {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .scale-comparison {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .scale-item {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .scale-result {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .tracking-features {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .tracking-features h2 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .feature-item {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-message {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Slide 5 - Call to Action */
+        .slide-5 {
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.7), rgba(255, 193, 7, 0.7)),
+                        url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=375&q=80');
+        }
+
+        .slide-5 h1 {
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .trust-signals {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .trust-item {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .member-count {
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: white;
+            color: #FF9800;
+        }
+
+        .website-link {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Navigation */
+        .nav-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .nav-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav-arrows:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .prev-arrow {
+            left: 10px;
+        }
+
+        .next-arrow {
+            right: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-180deg) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        .slide.active .transparency-badge {
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .slide.active .highlight {
+            animation: slideInRight 0.8s ease-out 0.4s both;
+        }
+
+        .slide.active .pie-chart {
+            animation: rotateIn 1s ease-out 0.3s both;
+        }
+
+        .slide.active .breakdown {
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .slide.active .euro-breakdown .breakdown-section:nth-child(1) {
+            animation: slideInLeft 0.6s ease-out 0.2s both;
+        }
+
+        .slide.active .euro-breakdown .breakdown-section:nth-child(2) {
+            animation: slideInRight 0.6s ease-out 0.4s both;
+        }
+
+        .slide.active .euro-breakdown .breakdown-section:nth-child(3) {
+            animation: slideInLeft 0.6s ease-out 0.6s both;
+        }
+
+        .slide.active .euro-breakdown .breakdown-section:nth-child(4) {
+            animation: slideInRight 0.6s ease-out 0.8s both;
+        }
+
+        .slide.active .scale-comparison {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .slide.active .tracking-features .feature-item {
+            animation: fadeInUp 0.5s ease-out calc(var(--delay, 0) * 0.1s) both;
+        }
+
+        .slide.active .trust-signals .trust-item {
+            animation: slideInLeft 0.5s ease-out calc(var(--delay, 0) * 0.1s) both;
+        }
+
+        .cta-button {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Hover effects */
+        .nav-arrows:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .nav-dot:hover {
+            transform: scale(1.3);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .breakdown-section:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .trust-item:hover {
+            transform: translateX(5px);
+        }
+
+        /* Loading animation for pie chart */
+        @keyframes fillPie {
+            from {
+                background: conic-gradient(#4CAF50 0deg 0deg, #81C784 0deg 360deg);
+            }
+            to {
+                background: conic-gradient(#4CAF50 0deg 298.8deg, #81C784 298.8deg 360deg);
+            }
+        }
+
+        .slide.active .pie-chart {
+            animation: rotateIn 1s ease-out 0.3s both, fillPie 2s ease-out 1s both;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .carousel-container {
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel-wrapper" id="carouselWrapper">
+            <!-- Slide 1: Cover -->
+            <div class="slide slide-1">
+                <img class="logo" src="https://assets.uon.earth/page/S4E/assets/img/profile-sail4earth.png" alt="Uon.Earth Logo">
+                <h1 style="margin-top:80px;">100% FINANCIAL TRANSPARENCY</h1>
+                <p class="subtitle">See exactly where your money goes</p>
+                
+                <div class="transparency-badge">
+                    <h2>💚 TRANSPARENCY BY DESIGN</h2>
+                    <div class="impact-stats">
+                        <div>👥 <strong>2,847</strong> Active Members</div>
+                        <div>💰 <strong>€34,164</strong> Pilot Revenue This Quarter</div>
+                        <div>🌱 <strong>28,470</strong> UONs Issued</div>
+                        <div>🎯 <strong>83%</strong> Direct to Conservation</div>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    Swipe to see the full breakdown →
+                </div>
+                
+                <div class="swipe-indicator">
+                    Swipe → 
+                </div>
+            </div>
+
+            <!-- Slide 2: 83% Promise -->
+            <div class="slide slide-2">
+                <h1>🎯 THE 83% PROMISE</h1>
+                
+                <p style="color: white; margin-bottom: 20px; font-size: 16px;">Every €1.20 you contribute:</p>
+                
+                <div class="pie-chart"></div>
+                
+                <div class="breakdown">
+                    <div class="breakdown-item">
+                        <strong>83% → CONSERVATION 🌳</strong><br>
+                        Directly funds nature protection
+                    </div>
+                    <div class="breakdown-item">
+                        <strong>17% → OPERATIONS + TAXES 💼</strong><br>
+                        Keeps the platform running
+                    </div>
+                    <div class="breakdown-item">
+                        <strong>0% → PROFITS ❌</strong><br>
+                        Zero dividends, ever.
+                    </div>
+                </div>
+                
+                <div class="hashtag">#TransparencyMatters</div>
+            </div>
+
+            <!-- Slide 3: Detailed Breakdown -->
+            <div class="slide slide-3">
+                <h1>💰 WHERE EVERY €1.20 GOES</h1>
+                
+                <div class="euro-breakdown">
+                    <div class="breakdown-section">
+                        <h3>90¢ → Established Conservation NGOs (75%)</h3>
+                        <p>Major nature protection organizations</p>
+                    </div>
+                    
+                    <div class="breakdown-section">
+                        <h3>10¢ → Grassroots Conservation (8.3%)</h3>
+                        <p>Local groundwork & field projects</p>
+                    </div>
+                    
+                    <div class="breakdown-section">
+                        <h3>3¢ → Governance & Oversight (2.5%)</h3>
+                        <p>Ensuring transparency & accountability</p>
+                    </div>
+                    
+                    <div class="breakdown-section">
+                        <h3>17¢ → Platform Operations (14.2%)</h3>
+                        <p>Tech infrastructure & zero dividends</p>
+                    </div>
+                </div>
+                
+                <div class="real-impact">Real impact, real numbers 📊</div>
+            </div>
+
+            <!-- Slide 4: Scale Vision -->
+            <div class="slide slide-4">
+                <h1>🚀 IMAGINE AT SCALE</h1>
+                
+                <div class="scale-comparison">
+                    <div class="scale-item"><strong>Current:</strong> 2,847 Members</div>
+                    <div class="scale-item"><strong>Vision:</strong> 100 Million Members</div>
+                </div>
+                
+                <div class="scale-result">= Billions for Conservation 🌍</div>
+                
+                <div class="tracking-features">
+                    <h2>📊 TRACK IT LIVE:</h2>
+                    <div class="feature-item">✅ Real-time impact counter</div>
+                    <div class="feature-item">✅ Live member count</div>
+                    <div class="feature-item">✅ UONs issued tracker</div>
+                    <div class="feature-item">✅ Quarterly reports</div>
+                </div>
+                
+                <div class="trust-message">
+                    No trust required - <br>
+                    just transparent data 📈
+                </div>
+            </div>
+
+            <!-- Slide 5: Call to Action -->
+            <div class="slide slide-5">
+                <h1>🌱 READY TO MAKE IMPACT?</h1>
+                
+                <div class="trust-signals">
+                    <div class="trust-item">✓ IUCN Member Organization</div>
+                    <div class="trust-item">✓ Quarterly Financial Reports</div>
+                    <div class="trust-item">✓ Live Impact Tracking</div>
+                    <div class="trust-item">✓ Zero Hidden Fees</div>
+                    <div class="trust-item">✓ Capped Returns Policy</div>
+                </div>
+                
+                <div class="member-count">
+                    Join <strong>2,847</strong> members creating<br>
+                    real change with full transparency
+                </div>
+                
+                <div class="cta-button">👆 Link in bio</div>
+                
+                <div class="website-link">Visit: Uon.Earth</div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <button class="nav-arrows prev-arrow" onclick="previousSlide()">‹</button>
+        <button class="nav-arrows next-arrow" onclick="nextSlide()">›</button>
+        
+        <div class="nav-dots">
+            <div class="nav-dot active" onclick="goToSlide(0)"></div>
+            <div class="nav-dot" onclick="goToSlide(1)"></div>
+            <div class="nav-dot" onclick="goToSlide(2)"></div>
+            <div class="nav-dot" onclick="goToSlide(3)"></div>
+            <div class="nav-dot" onclick="goToSlide(4)"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 5;
+        const carouselWrapper = document.getElementById('carouselWrapper');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        function updateCarousel() {
+            const translateX = -currentSlide * 20; // 20% per slide
+            carouselWrapper.style.transform = `translateX(${translateX}%)`;
+            
+            // Update nav dots
+            navDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+
+            // Update active slide for animations
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+
+            // Add animation delays for list items
+            const currentSlideElement = slides[currentSlide];
+            const featureItems = currentSlideElement.querySelectorAll('.feature-item');
+            const trustItems = currentSlideElement.querySelectorAll('.trust-item');
+            
+            featureItems.forEach((item, index) => {
+                item.style.setProperty('--delay', index);
+            });
+            
+            trustItems.forEach((item, index) => {
+                item.style.setProperty('--delay', index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Touch/swipe support
+        let startX = 0;
+        let endX = 0;
+
+        carouselWrapper.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        carouselWrapper.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    previousSlide();
+                }
+            }
+        }
+
+        // Auto-advance (optional)
+        // setInterval(nextSlide, 5000);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                previousSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+
+        // Initialize carousel
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCarousel();
+        });
+    </script>
+</body>
+</html>
